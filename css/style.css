@@ -1,34 +1,36 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Roboto"sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto" sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&family=Poppins:ital,wght@0,400;0,700;1,300;1,700&family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,500;1,700;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&family=Poppins:ital,wght@0,400;0,700;1,300;1,700&family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
 
 .descuentos {
-  background-color: aqua;
+  padding-left: 20px;
+  background-color: rgb(209, 137, 28);
   font-size: 20px;
   color: blue;
 }
 
 .header {
-  margin-bottom: 100px;
-  width: 100%;
-  height: 101px;
-  background-color: rgb(0, 102, 159);
   position: sticky;
   top: 0;
+  margin-bottom: 100px;
+  width: 100%;
+  background-color: rgb(0, 102, 159);
+  z-index: 10;
 }
 
 .header h1 {
-  font-size: 50px;
+  font-size: 2rem;
   font-weight: 700;
   padding-top: 40px;
+  padding-left: 20px;
+  color: white;
 }
 
-.cards{
+.cards {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 50px;
@@ -36,22 +38,46 @@ font-family: "Roboto"sans-serif;
 }
 
 .card {
-  width: 300px;
-  height: 529px;
+  position: relative;
+  width: 24%;
+  height: 560px;
   border: solid 2px black;
   border-radius: 15px;
   text-align: center;
-  background-image: url(/images/baticueba.png);
+  background-size: contain;
   background-repeat: no-repeat;
-  background-color: rgb(243,243,243);
+  background-color: rgb(243, 243, 243);
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.batman {
+  background-image: url(/images/baticueba.png);
+}
+
+.diana {
+  background-image: url(/images/amazonas.png);
 }
 
 .harley {
   background-image: url(/images/fondo-jarley.png);
 }
 
-.card img {
-  padding-top: 130px;
+.super {
+  background-image: url(/images/mundo.png);
+}
+
+.circle {
+  width: 128px;
+  height: 128px;
+  margin-top: 120px;
   margin-bottom: 20px;
 }
 
@@ -61,29 +87,80 @@ font-family: "Roboto"sans-serif;
 
 .card .description {
   padding: 15px;
-   font-weight: 200;
+  font-weight: 200;
   line-height: 1.2;
   margin-bottom: 25px;
 }
 
 .card a {
- padding: 10px 10px;
-  background-color:  rgb(0, 102, 159);
+  padding: 10px 10px;
+  background-color: rgb(0, 102, 159);
   text-decoration: none;
   font-size: 20px;
   color: white;
 }
 
 footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
   width: 100%;
-  height: 50px;
-  background-color: rgb(0, 102, 159) ;
+  height: auto;
+  background-color: rgb(0, 102, 159);
 }
 
-h3 {
-  padding-left: 10px;
-  padding-top: 20px;
-  font-size: 20px;
+footer h3 {
+  font-size: 14px;
   font-weight: 400;
   color: white;
+}
+
+footer img {
+  width: 110px;
+  height: 35px;
+}
+
+@media screen and (max-width:768px) {
+
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 39%;
+  }
+
+  footer {
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width:480px) {
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+  }
+  
+  .circle {
+    margin-top: 160px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  footer img {
+    width: 90px;
+    height: 20px;
+  }
 }
